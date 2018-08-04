@@ -18,21 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="57y-2b-v7a">
-                                <rect key="frame" x="0.0" y="432" width="375" height="235"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="p9K-CY-kTF">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                            </collectionView>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jMB-Ca-scN">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="432"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jMB-Ca-scN">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="fKR-eh-33f"/>
                                 </connections>
@@ -86,13 +73,16 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fVQ-8H-EWQ" secondAttribute="trailing" constant="16" id="1vE-cP-uKT"/>
+                            <constraint firstItem="jMB-Ca-scN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="K2h-zk-9Q2"/>
                             <constraint firstItem="fVQ-8H-EWQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="OCB-20-2gb"/>
                             <constraint firstItem="fVQ-8H-EWQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="QAJ-4L-A2g"/>
+                            <constraint firstItem="jMB-Ca-scN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="feB-tt-AOO"/>
+                            <constraint firstItem="jMB-Ca-scN" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="fh0-gR-cmF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jMB-Ca-scN" secondAttribute="bottom" id="pwn-bC-yHq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="hotelsCollectionView" destination="57y-2b-v7a" id="cvM-54-bZ2"/>
                         <outlet property="mapView" destination="jMB-Ca-scN" id="ae7-0P-d2u"/>
                     </connections>
                 </viewController>
