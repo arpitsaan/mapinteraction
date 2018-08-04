@@ -47,18 +47,25 @@
                                 <rect key="frame" x="16" y="36" width="343" height="48"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-search" translatesAutoresizingMaskIntoConstraints="NO" id="FhA-8c-Rci">
-                                        <rect key="frame" x="15" y="13" width="21" height="22"/>
+                                        <rect key="frame" x="13" y="14" width="21" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="21" id="jLq-zT-s4r"/>
-                                            <constraint firstAttribute="height" constant="22" id="jtg-sf-s8P"/>
+                                            <constraint firstAttribute="height" constant="21" id="jtg-sf-s8P"/>
                                         </constraints>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="San Francisco, CA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSu-0V-Q2g">
+                                        <rect key="frame" x="41" y="14" width="139" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="FhA-8c-Rci" firstAttribute="top" secondItem="fVQ-8H-EWQ" secondAttribute="top" constant="13" id="76d-lP-VOh"/>
+                                    <constraint firstItem="FhA-8c-Rci" firstAttribute="top" secondItem="fVQ-8H-EWQ" secondAttribute="top" constant="14" id="76d-lP-VOh"/>
                                     <constraint firstAttribute="height" constant="48" id="Afe-6S-1OG"/>
-                                    <constraint firstItem="FhA-8c-Rci" firstAttribute="leading" secondItem="fVQ-8H-EWQ" secondAttribute="leading" constant="15" id="XUv-Jz-bJe"/>
+                                    <constraint firstItem="FhA-8c-Rci" firstAttribute="leading" secondItem="fVQ-8H-EWQ" secondAttribute="leading" constant="13" id="XUv-Jz-bJe"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
