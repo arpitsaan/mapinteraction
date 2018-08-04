@@ -13,11 +13,10 @@ class HotelAnnotation: NSObject, MKAnnotation {
     let address: String
     let coordinate: CLLocationCoordinate2D
     
-    init(title: String, address: String) {
+    init(title: String, address: String, coordinate: CLLocationCoordinate2D) {
         self.title = title
+        self.coordinate = coordinate
         self.address = address
-        
-        self.coordinate = CLLocationCoordinate2D.init(latitude: 28.410992, longitude: 77.191932)//Fixme - to double acc
         
         super.init()
     }

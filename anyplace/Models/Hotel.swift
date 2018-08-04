@@ -46,6 +46,18 @@ struct Hotel: Codable {
     }
 }
 
+extension Hotel {
+    var lat: Double? {
+        //FIXME - SAFETY Check        guard let latitude = latitude else { return nil }
+        return Double(latitude)
+    }
+    
+    var lon: Double? {
+        //FIXME - SAFETY Check        guard let latitude = latitude else { return nil }
+        return Double(longitude)
+    }
+}
+
 struct HotelAmenities: Codable {
     let wifi, weeklyHousekeeping, sharedKitchen, laundryOnSite: Bool
     let publicParking, fitnessCenter, privateBath, barLounge: Bool
