@@ -42,19 +42,29 @@ class ViewController: UIViewController {
     }
     
     func addMapPins() {
-//        let hotel = hotels?.first
-//        let hotelAnnotation = HotelAnnotation(title: (hotel?.name)!,
-//                                              address: (hotel?.address)!,)
-        for hotel in hotels! {
-            let hotelAnnotation = HotelAnnotation(title: hotel.name, address: hotel.address, coordinate: CLLocationCoordinate2D.init(latitude: hotel.lat!, longitude: hotel.lon!))
-            mapView.addAnnotation(hotelAnnotation)
+        guard let hotels = self.hotels else {
+            return
         }
+        
+        var annotations = [HotelAnnotation]()
+        for hotel in hotels {
+            guard let lat = hotel.lat, let lon = hotel.lon else {
+                continue
+            }
+            
+            let coordinate = CLLocationCoordinate2D.init(latitude: lat, longitude: lon)
+            let hotelAnnotation = HotelAnnotation(title: hotel.name, address: hotel.address, coordinate: coordinate)
+            annotations.append(hotelAnnotation)
+        }
+
+        mapView.addAnnotations(annotations)
+
         //FIXME - lot of optional and ! random :/ ^^^
         
         //fixme - map centering
-        let hot = hotels?.last
-
-        mapView.setCenter(CLLocationCoordinate2D.init(latitude: hot!.lat!, longitude: hot!.lon!), animated: false)
+        if let coordinate = annotations.last?.coordinate {
+            mapView.setCenter(coordinate, animated: false)
+        }
     }
     
     
