@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="HotelDetailsCell" customModule="anyplace" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="419" height="661"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="419" height="661"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YUh-VA-w2U">
+                        <rect key="frame" x="0.0" y="0.0" width="420" height="661"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CQ3-Aq-hVh">
+                                <rect key="frame" x="16" y="16" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="14V-cn-5gw"/>
+                                    <constraint firstAttribute="width" constant="90" id="tge-Nw-PjG"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="100" verticalHuggingPriority="251" horizontalCompressionResistancePriority="800" text="Hotel Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5j8-Cv-bTs">
+                                <rect key="frame" x="114" y="16" width="91" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="100" verticalHuggingPriority="251" horizontalCompressionResistancePriority="800" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJ6-Te-sXg">
+                                <rect key="frame" x="114" y="39" width="63" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="100" verticalHuggingPriority="251" horizontalCompressionResistancePriority="800" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1W7-Rr-N9M">
+                                <rect key="frame" x="114" y="62" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="420" id="36D-Mo-yt2"/>
+                            <constraint firstItem="5j8-Cv-bTs" firstAttribute="leading" secondItem="CQ3-Aq-hVh" secondAttribute="trailing" constant="8" id="3Hl-Mr-a1m"/>
+                            <constraint firstItem="CQ3-Aq-hVh" firstAttribute="top" secondItem="YUh-VA-w2U" secondAttribute="top" constant="16" id="9fb-gt-2cG"/>
+                            <constraint firstItem="CQ3-Aq-hVh" firstAttribute="leading" secondItem="YUh-VA-w2U" secondAttribute="leading" constant="16" id="E0t-3U-o3o"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5j8-Cv-bTs" secondAttribute="trailing" constant="16" id="Exu-tb-8KO"/>
+                            <constraint firstItem="5j8-Cv-bTs" firstAttribute="top" secondItem="YUh-VA-w2U" secondAttribute="top" constant="16" id="I0W-C2-Cli"/>
+                            <constraint firstItem="1W7-Rr-N9M" firstAttribute="top" secondItem="EJ6-Te-sXg" secondAttribute="bottom" constant="2" id="J4q-r2-0dY"/>
+                            <constraint firstItem="1W7-Rr-N9M" firstAttribute="leading" secondItem="CQ3-Aq-hVh" secondAttribute="trailing" constant="8" id="U0w-YK-SIu"/>
+                            <constraint firstItem="EJ6-Te-sXg" firstAttribute="leading" secondItem="CQ3-Aq-hVh" secondAttribute="trailing" constant="8" id="bNh-Mb-aMh"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="EJ6-Te-sXg" secondAttribute="trailing" id="cyh-bh-PEJ"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="1W7-Rr-N9M" secondAttribute="bottom" id="dBs-6w-0xS"/>
+                            <constraint firstItem="5j8-Cv-bTs" firstAttribute="leading" secondItem="CQ3-Aq-hVh" secondAttribute="trailing" constant="8" id="tvg-VU-ujb"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="CQ3-Aq-hVh" secondAttribute="bottom" constant="16" id="yRC-12-aBe"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1W7-Rr-N9M" secondAttribute="trailing" id="yt3-B5-VRE"/>
+                            <constraint firstItem="EJ6-Te-sXg" firstAttribute="top" secondItem="5j8-Cv-bTs" secondAttribute="bottom" constant="2" id="zNE-Ml-bZ6"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="YUh-VA-w2U" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="DY5-W9-Pe9"/>
+                <constraint firstAttribute="bottom" secondItem="YUh-VA-w2U" secondAttribute="bottom" id="EsJ-A7-G9X"/>
+                <constraint firstItem="YUh-VA-w2U" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="d2T-9v-xkm"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="419" height="661"/>
+            <point key="canvasLocation" x="218.5" y="359.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

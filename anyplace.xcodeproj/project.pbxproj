@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		E892A98021158EA300A57DFC /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E892A97F21158EA300A57DFC /* UIViewExtension.swift */; };
 		E892A9822115950600A57DFC /* APColors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E892A9812115950600A57DFC /* APColors.xcassets */; };
+		E892A98B2115AFD900A57DFC /* HotelDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E892A9892115AFD900A57DFC /* HotelDetailsCell.swift */; };
+		E892A98C2115AFD900A57DFC /* HotelDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E892A98A2115AFD900A57DFC /* HotelDetailsCell.xib */; };
+		E892A98F2115BEE600A57DFC /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E892A98E2115BEE600A57DFC /* Hotel.swift */; };
+		E892A9922115BF7300A57DFC /* anyplace-hotels.json in Resources */ = {isa = PBXBuildFile; fileRef = E892A9912115BF7300A57DFC /* anyplace-hotels.json */; };
+		E892A9952115C44200A57DFC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E892A9942115C44200A57DFC /* MapKit.framework */; };
+		E892A9972115C58A00A57DFC /* HotelAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E892A9962115C58A00A57DFC /* HotelAnnotation.swift */; };
 		E8A72D702112F9AB0040F867 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A72D6F2112F9AB0040F867 /* AppDelegate.swift */; };
 		E8A72D722112F9AB0040F867 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A72D712112F9AB0040F867 /* ViewController.swift */; };
 		E8A72D752112F9AB0040F867 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8A72D732112F9AB0040F867 /* Main.storyboard */; };
@@ -30,6 +36,12 @@
 /* Begin PBXFileReference section */
 		E892A97F21158EA300A57DFC /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		E892A9812115950600A57DFC /* APColors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = APColors.xcassets; sourceTree = "<group>"; };
+		E892A9892115AFD900A57DFC /* HotelDetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelDetailsCell.swift; sourceTree = "<group>"; };
+		E892A98A2115AFD900A57DFC /* HotelDetailsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotelDetailsCell.xib; sourceTree = "<group>"; };
+		E892A98E2115BEE600A57DFC /* Hotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotel.swift; sourceTree = "<group>"; };
+		E892A9912115BF7300A57DFC /* anyplace-hotels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "anyplace-hotels.json"; sourceTree = "<group>"; };
+		E892A9942115C44200A57DFC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		E892A9962115C58A00A57DFC /* HotelAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelAnnotation.swift; sourceTree = "<group>"; };
 		E8A72D6C2112F9AB0040F867 /* anyplace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = anyplace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8A72D6F2112F9AB0040F867 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8A72D712112F9AB0040F867 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E892A9952115C44200A57DFC /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +81,47 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		E892A9882115AFD900A57DFC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E892A9892115AFD900A57DFC /* HotelDetailsCell.swift */,
+				E892A98A2115AFD900A57DFC /* HotelDetailsCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E892A98D2115BEC800A57DFC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E892A98E2115BEE600A57DFC /* Hotel.swift */,
+				E892A9962115C58A00A57DFC /* HotelAnnotation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E892A9902115BF6700A57DFC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E892A9912115BF7300A57DFC /* anyplace-hotels.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		E892A9932115C44200A57DFC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E892A9942115C44200A57DFC /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E8A72D632112F9AB0040F867 = {
 			isa = PBXGroup;
 			children = (
 				E8A72D6E2112F9AB0040F867 /* anyplace */,
 				E8A72D832112F9AD0040F867 /* anyplaceTests */,
 				E8A72D6D2112F9AB0040F867 /* Products */,
+				E892A9932115C44200A57DFC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +137,9 @@
 		E8A72D6E2112F9AB0040F867 /* anyplace */ = {
 			isa = PBXGroup;
 			children = (
+				E892A9902115BF6700A57DFC /* Data */,
+				E892A98D2115BEC800A57DFC /* Models */,
+				E892A9882115AFD900A57DFC /* Views */,
 				E892A97E2115895C00A57DFC /* Extensions */,
 				E8A72D6F2112F9AB0040F867 /* AppDelegate.swift */,
 				E8A72D712112F9AB0040F867 /* ViewController.swift */,
@@ -194,7 +245,9 @@
 				E892A9822115950600A57DFC /* APColors.xcassets in Resources */,
 				E8A72D7A2112F9AD0040F867 /* LaunchScreen.storyboard in Resources */,
 				E8A72D772112F9AD0040F867 /* Assets.xcassets in Resources */,
+				E892A98C2115AFD900A57DFC /* HotelDetailsCell.xib in Resources */,
 				E8A72D752112F9AB0040F867 /* Main.storyboard in Resources */,
+				E892A9922115BF7300A57DFC /* anyplace-hotels.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,9 +265,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E892A98F2115BEE600A57DFC /* Hotel.swift in Sources */,
+				E892A9972115C58A00A57DFC /* HotelAnnotation.swift in Sources */,
 				E892A98021158EA300A57DFC /* UIViewExtension.swift in Sources */,
 				E8A72D722112F9AB0040F867 /* ViewController.swift in Sources */,
 				E8A72D702112F9AB0040F867 /* AppDelegate.swift in Sources */,
+				E892A98B2115AFD900A57DFC /* HotelDetailsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

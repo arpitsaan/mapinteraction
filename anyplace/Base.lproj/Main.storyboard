@@ -22,39 +22,33 @@
                                 <rect key="frame" x="0.0" y="432" width="375" height="235"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="p9K-CY-kTF">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="p9K-CY-kTF">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="9TG-oX-3ep">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                             </collectionView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jMB-Ca-scN">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="432"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="fKR-eh-33f"/>
+                                </connections>
                             </mapView>
                             <view alpha="0.93999999999999995" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fVQ-8H-EWQ">
                                 <rect key="frame" x="16" y="36" width="343" height="48"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-search" translatesAutoresizingMaskIntoConstraints="NO" id="FhA-8c-Rci">
-                                        <rect key="frame" x="13" y="14" width="21" height="21"/>
+                                        <rect key="frame" x="13" y="13" width="21" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="21" id="jLq-zT-s4r"/>
-                                            <constraint firstAttribute="height" constant="21" id="jtg-sf-s8P"/>
+                                            <constraint firstAttribute="height" constant="22" id="jtg-sf-s8P"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="San Francisco, CA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSu-0V-Q2g">
-                                        <rect key="frame" x="41" y="14" width="139" height="21"/>
+                                        <rect key="frame" x="45" y="13" width="139" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <nil key="textColor"/>
@@ -63,7 +57,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="FhA-8c-Rci" firstAttribute="top" secondItem="fVQ-8H-EWQ" secondAttribute="top" constant="14" id="76d-lP-VOh"/>
+                                    <constraint firstItem="FhA-8c-Rci" firstAttribute="top" secondItem="fVQ-8H-EWQ" secondAttribute="top" constant="13" id="76d-lP-VOh"/>
                                     <constraint firstAttribute="height" constant="48" id="Afe-6S-1OG"/>
                                     <constraint firstItem="FhA-8c-Rci" firstAttribute="leading" secondItem="fVQ-8H-EWQ" secondAttribute="leading" constant="13" id="XUv-Jz-bJe"/>
                                 </constraints>
@@ -97,6 +91,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="hotelsCollectionView" destination="57y-2b-v7a" id="cvM-54-bZ2"/>
+                        <outlet property="mapView" destination="jMB-Ca-scN" id="ae7-0P-d2u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
