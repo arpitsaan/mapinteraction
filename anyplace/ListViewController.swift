@@ -74,13 +74,14 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func showHotelAtIndex(index: Int) {
-        collectionView.scrollToItem(at: IndexPath.init(item: index, section: 0), at: UICollectionViewScrollPosition.top, animated: true)
+        collectionView.scrollToItem(at: IndexPath.init(item: index, section: 0), at: .left, animated: false)
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
         delegate?.listViewItemDidScrollTo(indexPath: indexPath)
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height)

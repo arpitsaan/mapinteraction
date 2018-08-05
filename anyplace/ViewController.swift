@@ -116,18 +116,21 @@ extension ViewController: MKMapViewDelegate {
         listViewController?.showHotelAtIndex(index: index)
     }
     
-    func selectAnnotationAtIndex(index: Int) {
-        //fixme - map centering
-        self.mapView.selectAnnotation(self.annotations[index], animated: true)
+    func selectAnnotationAtIndex(index: Int, shouldAdjustMap: Bool) {
+        //FIXME - map centering
+        self.mapView.selectAnnotation(self.annotations[index], animated: false)
         
         let coordinate = annotations[index].coordinate
         let annotation = annotations[index]
         
         mapView.selectAnnotation(annotation, animated: false)
-        let span = MKCoordinateSpanMake(0.01, 0.01)
-        let region = MKCoordinateRegionMake(coordinate, span)
         
-        mapView.setRegion(region, animated: true)
+        if (shouldAdjustMap) {
+            let span = MKCoordinateSpanMake(0.01, 0.01)
+            let region = MKCoordinateRegionMake(coordinate, span)
+            
+            mapView.setRegion(region, animated: true)
+        }
     }
 }
 
@@ -138,7 +141,7 @@ extension ViewController: ListViewDelegate {
     }
     
     func listViewItemDidScrollTo(indexPath: IndexPath) {
-        selectAnnotationAtIndex(index: indexPath.item)
+        selectAnnotationAtIndex(index: indexPath.item, shouldAdjustMap: true)
     }
     
 }
