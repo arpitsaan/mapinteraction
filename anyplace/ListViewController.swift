@@ -107,6 +107,7 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func showHotelAtIndex(index: Int) {
+        self.view.isHidden = false
         collectionView.scrollToItem(at: IndexPath.init(item: index, section: 0), at: .left, animated: false)
     }
     

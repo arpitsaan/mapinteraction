@@ -142,12 +142,24 @@ class MainViewController: UIViewController {
         }
     }
     
+    func hideListView() {
+        guard let listViewController = self.listViewController else {
+            return
+        }
+        listViewController.view.isHidden = true
+    }
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
 }
 
 extension MainViewController: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+        hideListView()
+    }
+
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         self.selectedAnnotation = view.annotation as? HotelAnnotation
         
