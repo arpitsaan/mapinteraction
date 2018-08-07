@@ -19,5 +19,53 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "anyplace/MainViewController.swift"
+            timestampString = "555320882.736445"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "panUsed(sender:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "anyplace.MainViewController.panUsed(sender: __ObjC.UIPanGestureRecognizer) -&gt; ()"
+                  moduleName = "anyplace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zom/Dropbox/interview-projects/anyplace/anyplace/MainViewController.swift"
+                  timestampString = "555319948.457811"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "112"
+                  endingLineNumber = "112"
+                  offsetFromSymbolStart = "4548">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "function signature specialization &lt;Arg[1] = Value Promoted from Box&gt; of closure #2 () -&gt; () in anyplace.MainViewController.panUsed(sender: __ObjC.UIPanGestureRecognizer) -&gt; ()"
+                  moduleName = "anyplace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zom/Dropbox/interview-projects/anyplace/anyplace/MainViewController.swift"
+                  timestampString = "555319948.462397"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

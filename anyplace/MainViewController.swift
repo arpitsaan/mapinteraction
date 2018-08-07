@@ -67,13 +67,12 @@ class MainViewController: UIViewController {
         }
         
         let translation = sender.translation(in: listViewController.view)
-        
         let velocity = sender.velocity(in: listViewController.view)
+        let listViewY = listViewController.view.frame.origin.y;
+        var lvFrame = listViewController.view.frame;
 
         if sender.state == .ended {
-            let listViewY = listViewController.view.frame.origin.y;
-            var lvFrame = listViewController.view.frame;
-            let velocityThresh: CGFloat = 500
+            let velocityThresh: CGFloat = 700
             let showHeight: CGFloat = lvFrame.size.height - 150
             let heightThresh: CGFloat = lvFrame.size.height/2
             
@@ -94,15 +93,27 @@ class MainViewController: UIViewController {
                 }
             }
             
-            UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.1, options: .curveEaseInOut, animations: {
+            UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.72, initialSpringVelocity: 0.1, options: [.allowUserInteraction, .curveEaseInOut], animations: {
                 listViewController.view.frame = lvFrame
             }, completion: nil)
             
             //            listViewController.view.center = CGPoint(x: listViewController.view.center.x, y: listViewController.view.center.y + translation.y)
-        }else {
-            listViewController.view.center = CGPoint(x: listViewController.view.center.x, y: listViewController.view.center.y + translation.y)
-            
-            sender.setTranslation(CGPoint.zero, in: listViewController.view)
+        }
+        else {
+            if (listViewY + translation.y > 0) {
+                
+                listViewController.view.center = CGPoint(x: listViewController.view.center.x, y: listViewController.view.center.y + translation.y)
+                
+                sender.setTranslation(CGPoint.zero, in: listViewController.view)
+            }
+            else {
+                lvFrame.origin = .zero
+
+                UIView.animate(withDuration: 0.1, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.1, options: .curveEaseInOut, animations: {
+                    listViewController.view.frame = lvFrame
+                }, completion: nil)
+                
+            }
         }
         
     }

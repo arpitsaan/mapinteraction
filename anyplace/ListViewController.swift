@@ -26,7 +26,7 @@ class ListViewController: UIViewController {
     }
     
     @IBAction func didTapApply(_ sender: Any) {
-        let alert = UIAlertController.init(title: "Apply", message: "TODO: Add the apply to hotel form to this app", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController.init(title: "Apply", message: "TODO: Add  apply form functionality on this button tap", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction.init(title: "Okay", style: .default, handler: nil))
         self.show(alert, sender: nil)
     }
