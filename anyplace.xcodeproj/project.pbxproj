@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		CD215CCC443CB2B41D54EBC0 /* Pods_anyplace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41DA151DEB9E8A68CE4FEB29 /* Pods_anyplace.framework */; };
-		E849546F2116203D00D031C7 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E849546E2116203D00D031C7 /* ListViewController.swift */; };
+		E8360FD7211A1BE40017E400 /* APDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8360FD6211A1BE40017E400 /* APDataManager.swift */; };
+		E849546F2116203D00D031C7 /* HotelDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E849546E2116203D00D031C7 /* HotelDetailsViewController.swift */; };
 		E84954712116204700D031C7 /* ListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84954702116204700D031C7 /* ListCollectionViewCell.swift */; };
 		E849549C211729EA00D031C7 /* RoomDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E849549B211729EA00D031C7 /* RoomDetailsCell.swift */; };
 		E892A98021158EA300A57DFC /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E892A97F21158EA300A57DFC /* UIViewExtension.swift */; };
@@ -38,7 +39,8 @@
 		19F4C3CB56996A4AC2C67E58 /* Pods-anyplace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-anyplace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-anyplace/Pods-anyplace.debug.xcconfig"; sourceTree = "<group>"; };
 		41DA151DEB9E8A68CE4FEB29 /* Pods_anyplace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_anyplace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA3127CB48A5F7517AF2EE04 /* Pods-anyplace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-anyplace.release.xcconfig"; path = "Pods/Target Support Files/Pods-anyplace/Pods-anyplace.release.xcconfig"; sourceTree = "<group>"; };
-		E849546E2116203D00D031C7 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		E8360FD6211A1BE40017E400 /* APDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APDataManager.swift; sourceTree = "<group>"; };
+		E849546E2116203D00D031C7 /* HotelDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelDetailsViewController.swift; sourceTree = "<group>"; };
 		E84954702116204700D031C7 /* ListCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCollectionViewCell.swift; sourceTree = "<group>"; };
 		E849549B211729EA00D031C7 /* RoomDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDetailsCell.swift; sourceTree = "<group>"; };
 		E892A97F21158EA300A57DFC /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -87,6 +89,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E8360FD8211A21FC0017E400 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E8BD90BC211979D30019BE8C /* MainViewController.swift */,
+				E849546E2116203D00D031C7 /* HotelDetailsViewController.swift */,
+				E8A72D732112F9AB0040F867 /* Main.storyboard */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		E892A97E2115895C00A57DFC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				E892A9912115BF7300A57DFC /* anyplace-hotels.json */,
+				E8360FD6211A1BE40017E400 /* APDataManager.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -153,14 +166,12 @@
 		E8A72D6E2112F9AB0040F867 /* anyplace */ = {
 			isa = PBXGroup;
 			children = (
+				E8360FD8211A21FC0017E400 /* View Controllers */,
 				E892A9902115BF6700A57DFC /* Data */,
 				E892A98D2115BEC800A57DFC /* Models */,
 				E892A9882115AFD900A57DFC /* Views */,
 				E892A97E2115895C00A57DFC /* Extensions */,
 				E8A72D6F2112F9AB0040F867 /* AppDelegate.swift */,
-				E849546E2116203D00D031C7 /* ListViewController.swift */,
-				E8BD90BC211979D30019BE8C /* MainViewController.swift */,
-				E8A72D732112F9AB0040F867 /* Main.storyboard */,
 				E8A72D762112F9AD0040F867 /* Assets.xcassets */,
 				E8A72D782112F9AD0040F867 /* LaunchScreen.storyboard */,
 				E8A72D7B2112F9AD0040F867 /* Info.plist */,
@@ -324,10 +335,11 @@
 				E892A9972115C58A00A57DFC /* HotelAnnotation.swift in Sources */,
 				E84954712116204700D031C7 /* ListCollectionViewCell.swift in Sources */,
 				E849549C211729EA00D031C7 /* RoomDetailsCell.swift in Sources */,
+				E8360FD7211A1BE40017E400 /* APDataManager.swift in Sources */,
 				E892A98021158EA300A57DFC /* UIViewExtension.swift in Sources */,
 				E8BD90BD211979D30019BE8C /* MainViewController.swift in Sources */,
 				E8A72D702112F9AB0040F867 /* AppDelegate.swift in Sources */,
-				E849546F2116203D00D031C7 /* ListViewController.swift in Sources */,
+				E849546F2116203D00D031C7 /* HotelDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

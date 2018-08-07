@@ -100,10 +100,10 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
         </scene>
-        <!--List View Controller-->
+        <!--Hotel Details View Controller-->
         <scene sceneID="2uy-6n-L1d">
             <objects>
-                <viewController storyboardIdentifier="ListViewController" id="xAV-99-0Y0" customClass="ListViewController" customModule="anyplace" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListViewController" id="xAV-99-0Y0" customClass="HotelDetailsViewController" customModule="anyplace" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Caq-EZ-nQm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

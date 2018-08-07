@@ -26,45 +26,29 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "anyplace/MainViewController.swift"
-            timestampString = "555357422.9368581"
+            timestampString = "555360161.5218"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "112"
             endingLineNumber = "112"
-            landmarkName = "panUsed(sender:)"
+            landmarkName = "swipe(sender:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "anyplace.MainViewController.panUsed(sender: __ObjC.UIPanGestureRecognizer) -&gt; ()"
-                  moduleName = "anyplace"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zom/Dropbox/interview-projects/anyplace/anyplace/MainViewController.swift"
-                  timestampString = "555357292.81473"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "112"
-                  endingLineNumber = "112"
-                  offsetFromSymbolStart = "4698">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "function signature specialization &lt;Arg[1] = Value Promoted from Box&gt; of closure #2 () -&gt; () in anyplace.MainViewController.panUsed(sender: __ObjC.UIPanGestureRecognizer) -&gt; ()"
-                  moduleName = "anyplace"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zom/Dropbox/interview-projects/anyplace/anyplace/MainViewController.swift"
-                  timestampString = "555357292.817446"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "113"
-                  endingLineNumber = "113"
-                  offsetFromSymbolStart = "36">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "anyplace/View Controllers/MainViewController.swift"
+            timestampString = "555362304.736436"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "dataManagerLoadSuccessful(hotels:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
