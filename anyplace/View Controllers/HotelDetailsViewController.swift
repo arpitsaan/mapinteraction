@@ -41,9 +41,10 @@ class HotelDetailsViewController: UIViewController {
     }
 }
 
+//--------------------------
+// Collection View Methods
+//--------------------------
 extension HotelDetailsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    //Collection View Methods
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -115,8 +116,9 @@ extension HotelDetailsViewController: UICollectionViewDelegate, UICollectionView
     }
 
 }
-
-//-------- Interactions ---------------
+//---------------
+// Interactions
+//---------------
 extension HotelDetailsViewController {
     
     func setupInitState() {
