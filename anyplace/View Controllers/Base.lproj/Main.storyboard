@@ -75,9 +75,15 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <viewLayoutGuide key="safeArea" id="fB2-fp-Qsu"/>
                                 <items>
-                                    <tabBarItem title="Home" image="home" selectedImage="home-selected" id="XKV-BI-T9k"/>
-                                    <tabBarItem title="My Hotel" image="my-hotel-selected" selectedImage="my-hotel-selected" id="he6-nm-Gm7"/>
-                                    <tabBarItem title="Profile" image="profile" selectedImage="profile-selected" id="Agh-Of-AwE"/>
+                                    <tabBarItem title="Home" image="home" selectedImage="home-selected" id="XKV-BI-T9k">
+                                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-2"/>
+                                    </tabBarItem>
+                                    <tabBarItem title="My Hotel" image="my-hotel-selected" selectedImage="my-hotel-selected" id="he6-nm-Gm7">
+                                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-2"/>
+                                    </tabBarItem>
+                                    <tabBarItem title="Profile" image="profile" badgeValue="1" selectedImage="profile-selected" id="Agh-Of-AwE">
+                                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-2"/>
+                                    </tabBarItem>
                                 </items>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="tintColor">

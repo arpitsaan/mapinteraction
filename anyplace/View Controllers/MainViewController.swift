@@ -104,18 +104,25 @@ extension MainViewController: MKMapViewDelegate {
         mapView.addAnnotations(annotations)
         mapView.showsCompass = false
         mapView.showsUserLocation = true
+        
+        //add tap gesture on map
+        let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(didTapMapView))
+        mapView.addGestureRecognizer(tapGesture)
     }
     
-    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
-        guard let hotelDetailsVC = self.hotelDetailsVC else {
+    @objc func didTapMapView(sender: UITapGestureRecognizer) {
+        guard let mapView = self.mapView else {
             return
         }
         
-        if mapView.selectedAnnotations.count == 0 {
-            hotelDetailsVC.hideView(animated: true)
+        if mapView.selectedAnnotations.count > 0 {
+            for annotation in mapView.selectedAnnotations {
+                mapView.deselectAnnotation(annotation, animated: true)
+            }
+            hotelDetailsVC?.hideView(animated: true)
         }
     }
-
+    
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         self.selectedAnnotation = view.annotation as? HotelAnnotation
         
@@ -132,7 +139,7 @@ extension MainViewController: MKMapViewDelegate {
         }
         
         moveMap(coordinate: coordinate, mapView: mapView)
-        hotelDetailsVC?.showHotelAtIndex(index: index)
+        hotelDetailsVC?.showHotelAtIndex(index: index, animated: true)
     }
     
     func selectAnnotationAtIndex(index: Int) {

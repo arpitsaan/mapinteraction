@@ -127,10 +127,10 @@ extension HotelDetailsViewController {
         self.view.frame.origin.y = self.view.frame.size.height - visibleHeight
     }
     
-    func showHotelAtIndex(index: Int) {
+    func showHotelAtIndex(index: Int, animated: Bool) {
 
         if self.view.isHidden == true {
-            showView(animated: true)
+            showView(animated: animated)
         }
         
         collectionView.scrollToItem(at: IndexPath.init(item: index, section: 0), at: .left, animated: false)
@@ -146,8 +146,10 @@ extension HotelDetailsViewController {
         
         self.view.isHidden = false
         
-        UIView.animate(withDuration: animated ? 0.2 : 0, animations: {
+        self.view.alpha = 0
+        UIView.animate(withDuration: animated ? 0.1 : 0, animations: {
             self.view.frame = showFrame
+            self.view.alpha = 1
         }, completion: { (finished: Bool) in
         })
     }
@@ -156,14 +158,18 @@ extension HotelDetailsViewController {
     func hideView(animated: Bool) {
         var hiddenFrame = self.view.frame
         hiddenFrame.origin.y = hiddenFrame.height
+        self.view.alpha = 1
         
         UIView.animate(withDuration: animated ? 0.2 : 0, animations: {
             self.view.frame = hiddenFrame
+            self.view.alpha = 0
         }, completion: { (finished: Bool) in
             self.view.isHidden = true
+            self.view.alpha = 1
         })
     }
     
+    //Pan Gesture Interaction
     @objc func panUsed(sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: self.view)
         let velocity = sender.velocity(in: self.view)
