@@ -10,10 +10,9 @@
 		CD215CCC443CB2B41D54EBC0 /* Pods_anyplace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41DA151DEB9E8A68CE4FEB29 /* Pods_anyplace.framework */; };
 		E849546F2116203D00D031C7 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E849546E2116203D00D031C7 /* ListViewController.swift */; };
 		E84954712116204700D031C7 /* ListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84954702116204700D031C7 /* ListCollectionViewCell.swift */; };
+		E849549C211729EA00D031C7 /* RoomDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E849549B211729EA00D031C7 /* RoomDetailsCell.swift */; };
 		E892A98021158EA300A57DFC /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E892A97F21158EA300A57DFC /* UIViewExtension.swift */; };
 		E892A9822115950600A57DFC /* APColors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E892A9812115950600A57DFC /* APColors.xcassets */; };
-		E892A98B2115AFD900A57DFC /* HotelDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E892A9892115AFD900A57DFC /* HotelDetailsCell.swift */; };
-		E892A98C2115AFD900A57DFC /* HotelDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E892A98A2115AFD900A57DFC /* HotelDetailsCell.xib */; };
 		E892A98F2115BEE600A57DFC /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E892A98E2115BEE600A57DFC /* Hotel.swift */; };
 		E892A9922115BF7300A57DFC /* anyplace-hotels.json in Resources */ = {isa = PBXBuildFile; fileRef = E892A9912115BF7300A57DFC /* anyplace-hotels.json */; };
 		E892A9952115C44200A57DFC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E892A9942115C44200A57DFC /* MapKit.framework */; };
@@ -42,10 +41,9 @@
 		CA3127CB48A5F7517AF2EE04 /* Pods-anyplace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-anyplace.release.xcconfig"; path = "Pods/Target Support Files/Pods-anyplace/Pods-anyplace.release.xcconfig"; sourceTree = "<group>"; };
 		E849546E2116203D00D031C7 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		E84954702116204700D031C7 /* ListCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCollectionViewCell.swift; sourceTree = "<group>"; };
+		E849549B211729EA00D031C7 /* RoomDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDetailsCell.swift; sourceTree = "<group>"; };
 		E892A97F21158EA300A57DFC /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		E892A9812115950600A57DFC /* APColors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = APColors.xcassets; sourceTree = "<group>"; };
-		E892A9892115AFD900A57DFC /* HotelDetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelDetailsCell.swift; sourceTree = "<group>"; };
-		E892A98A2115AFD900A57DFC /* HotelDetailsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotelDetailsCell.xib; sourceTree = "<group>"; };
 		E892A98E2115BEE600A57DFC /* Hotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotel.swift; sourceTree = "<group>"; };
 		E892A9912115BF7300A57DFC /* anyplace-hotels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "anyplace-hotels.json"; sourceTree = "<group>"; };
 		E892A9942115C44200A57DFC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -103,8 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				E84954702116204700D031C7 /* ListCollectionViewCell.swift */,
-				E892A9892115AFD900A57DFC /* HotelDetailsCell.swift */,
-				E892A98A2115AFD900A57DFC /* HotelDetailsCell.xib */,
+				E849549B211729EA00D031C7 /* RoomDetailsCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -269,7 +266,6 @@
 				E892A9822115950600A57DFC /* APColors.xcassets in Resources */,
 				E8A72D7A2112F9AD0040F867 /* LaunchScreen.storyboard in Resources */,
 				E8A72D772112F9AD0040F867 /* Assets.xcassets in Resources */,
-				E892A98C2115AFD900A57DFC /* HotelDetailsCell.xib in Resources */,
 				E8A72D752112F9AB0040F867 /* Main.storyboard in Resources */,
 				E892A9922115BF7300A57DFC /* anyplace-hotels.json in Resources */,
 			);
@@ -331,10 +327,10 @@
 				E892A98F2115BEE600A57DFC /* Hotel.swift in Sources */,
 				E892A9972115C58A00A57DFC /* HotelAnnotation.swift in Sources */,
 				E84954712116204700D031C7 /* ListCollectionViewCell.swift in Sources */,
+				E849549C211729EA00D031C7 /* RoomDetailsCell.swift in Sources */,
 				E892A98021158EA300A57DFC /* UIViewExtension.swift in Sources */,
 				E8A72D722112F9AB0040F867 /* ViewController.swift in Sources */,
 				E8A72D702112F9AB0040F867 /* AppDelegate.swift in Sources */,
-				E892A98B2115AFD900A57DFC /* HotelDetailsCell.swift in Sources */,
 				E849546F2116203D00D031C7 /* ListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

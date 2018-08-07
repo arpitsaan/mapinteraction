@@ -117,7 +117,6 @@ extension ViewController: MKMapViewDelegate {
     }
     
     func selectAnnotationAtIndex(index: Int, shouldAdjustMap: Bool) {
-        //FIXME - map centering
         self.mapView.selectAnnotation(self.annotations[index], animated: false)
         
         let coordinate = annotations[index].coordinate

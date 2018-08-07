@@ -2,8 +2,8 @@
 //  ListViewController.swift
 //  TestMap
 //
-//  Created by Nadzeya on 8/4/18.
-//  Copyright © 2018 Nadzeya. All rights reserved.
+//  Created by Arpit Agarwal on 8/4/18.
+//  Copyright © 2018 acyooman. All rights reserved.
 //
 
 import UIKit
@@ -67,10 +67,41 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let url = URL(string: hotel.coverPhoto.url)
         cell.imageView.kf.setImage(with: url)
         
+        let price = hotel.rate as NSNumber
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.locale = NSLocale.current
+        
+        if let rate = formatter.string(from: price) {
+            cell.rateLabel.text = rate + " ~ / month";
+        }
+        
         cell.addressLabel.text = hotel.address
-        cell.amenitiesLabel.text = hotel.tourDescription
 
+        var amenities = "Private Bath : " + hotel.amenities.privateBath.description
+        amenities += ", Shared Kitchen : " + hotel.amenities.sharedKitchen.description
+        
+        cell.amenitiesLabel.text = amenities
+        
+        var roomsString = ""
+        for room in hotel.rooms {
+            let roomRate = hotel.rate as NSNumber
+            
+            if let rate = formatter.string(from: roomRate) {
+                let currentRoomString = room.name + "\n" + rate + "\n\n"
+                roomsString.append(currentRoomString)
+            }
+            
+        }
+        
+        cell.roomsLabel.text = roomsString
+        
         return cell
+    }
+    
+    func getAmenitiesString(hotel: Hotel) {
+        var amenitiesString = ""
+        amenitiesString += hotel.amenities.barLounge.description
     }
     
     func showHotelAtIndex(index: Int) {
