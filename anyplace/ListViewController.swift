@@ -16,7 +16,12 @@ protocol ListViewDelegate: class {
 
 class ListViewController: UIViewController {
 
-    var hotels: Hotels?
+    var hotels: Hotels? {
+        didSet {
+            self.collectionView.reloadData()
+        }
+    }
+    
     weak var delegate: ListViewDelegate?
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -30,17 +35,6 @@ class ListViewController: UIViewController {
         alert.addAction(UIAlertAction.init(title: "Okay", style: .default, handler: nil))
         self.show(alert, sender: nil)
     }
-    
-    func refreshWithHotels(hotels : Hotels?) {
-        guard let hotelsUnwrapped = hotels else {
-            return
-        }
-        
-        self.hotels = hotelsUnwrapped
-        self.collectionView.reloadData()
-    }
-    
-    
 }
 
 extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -63,52 +57,39 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return cell
         }
         
+        //Name
         let hotel = hotels[indexPath.item]
         cell.nameLabel.text = hotel.name
         
+        //Address
+        cell.addressLabel.text = hotel.address
+        
+        //Image
         let url = URL(string: hotel.coverPhoto.url)
         cell.imageView.kf.setImage(with: url)
         
-        let price = hotel.rate as NSNumber
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.locale = NSLocale.current
-        
-        if let rate = formatter.string(from: price) {
-            cell.rateLabel.text = rate + " ~ / month";
+        //Rate
+        if let rateText = hotel.rateText {
+            cell.rateLabel.text = rateText + " ~ / month";
         }
         
-        cell.addressLabel.text = hotel.address
-
+        //Amenities (v1)
         var amenities = "Private Bath : " + hotel.amenities.privateBath.description
         amenities += ", Shared Kitchen : " + hotel.amenities.sharedKitchen.description
-        
         cell.amenitiesLabel.text = amenities
         
+        //Rooms (v1)
         var roomsString = ""
         for room in hotel.rooms {
-            let roomRate = hotel.rate as NSNumber
-            
-            if let rate = formatter.string(from: roomRate) {
+            //Create a single string for all rates (for prototype v1)
+            if let rate = room.rateText {
                 let currentRoomString = room.name + "\n" + rate + "\n\n"
                 roomsString.append(currentRoomString)
             }
-            
         }
-        
         cell.roomsLabel.text = roomsString
         
         return cell
-    }
-    
-    func getAmenitiesString(hotel: Hotel) {
-        var amenitiesString = ""
-        amenitiesString += hotel.amenities.barLounge.description
-    }
-    
-    func showHotelAtIndex(index: Int) {
-        self.view.isHidden = false
-        collectionView.scrollToItem(at: IndexPath.init(item: index, section: 0), at: .left, animated: false)
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -124,6 +105,26 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height)
     }
-    
-    
 }
+
+extension ListViewController {
+    
+    //Setters
+    
+    
+    func refreshWithHotels(hotels : Hotels?) {
+        guard let hotelsUnwrapped = hotels else {
+            return
+        }
+        
+        self.hotels = hotelsUnwrapped
+        self.collectionView.reloadData()
+    }
+    
+    //Functionality Setters
+    func showHotelAtIndex(index: Int) {
+        self.view.isHidden = false
+        collectionView.scrollToItem(at: IndexPath.init(item: index, section: 0), at: .left, animated: false)
+    }
+}
+

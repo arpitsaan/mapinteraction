@@ -46,6 +46,37 @@ struct Hotel: Codable {
     }
 }
 
+extension Hotel {
+    
+    //Initialize a formatter for currency
+    //(since formatters are expensive)
+    public static let rateFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.locale = NSLocale.init(localeIdentifier: "en_US") as Locale?
+        return formatter
+    }()
+
+    //Read-Only formatted Hotel rate
+    var rateText : String? {
+        get {
+            let hotelRate = rate as NSNumber
+            return Hotel.rateFormatter.string(from: hotelRate)
+        }
+    }
+}
+
+extension Room {
+    
+    //Read-Only formatted Room rate
+    var rateText : String? {
+        get {
+            let roomRate = rate as NSNumber
+            return Hotel.rateFormatter.string(from: roomRate)
+        }
+    }
+}
+
 struct HotelAmenities: Codable {
     let wifi, weeklyHousekeeping, sharedKitchen, laundryOnSite: Bool
     let publicParking, fitnessCenter, privateBath, barLounge: Bool
