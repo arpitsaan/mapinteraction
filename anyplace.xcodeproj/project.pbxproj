@@ -10,7 +10,7 @@
 		CD215CCC443CB2B41D54EBC0 /* Pods_anyplace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41DA151DEB9E8A68CE4FEB29 /* Pods_anyplace.framework */; };
 		E8360FD7211A1BE40017E400 /* APDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8360FD6211A1BE40017E400 /* APDataManager.swift */; };
 		E849546F2116203D00D031C7 /* HotelDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E849546E2116203D00D031C7 /* HotelDetailsViewController.swift */; };
-		E84954712116204700D031C7 /* ListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84954702116204700D031C7 /* ListCollectionViewCell.swift */; };
+		E84954712116204700D031C7 /* HotelDetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84954702116204700D031C7 /* HotelDetailsCollectionViewCell.swift */; };
 		E849549C211729EA00D031C7 /* RoomDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E849549B211729EA00D031C7 /* RoomDetailsCell.swift */; };
 		E892A98021158EA300A57DFC /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E892A97F21158EA300A57DFC /* UIViewExtension.swift */; };
 		E892A98F2115BEE600A57DFC /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E892A98E2115BEE600A57DFC /* Hotel.swift */; };
@@ -41,7 +41,7 @@
 		CA3127CB48A5F7517AF2EE04 /* Pods-anyplace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-anyplace.release.xcconfig"; path = "Pods/Target Support Files/Pods-anyplace/Pods-anyplace.release.xcconfig"; sourceTree = "<group>"; };
 		E8360FD6211A1BE40017E400 /* APDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APDataManager.swift; sourceTree = "<group>"; };
 		E849546E2116203D00D031C7 /* HotelDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelDetailsViewController.swift; sourceTree = "<group>"; };
-		E84954702116204700D031C7 /* ListCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCollectionViewCell.swift; sourceTree = "<group>"; };
+		E84954702116204700D031C7 /* HotelDetailsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelDetailsCollectionViewCell.swift; sourceTree = "<group>"; };
 		E849549B211729EA00D031C7 /* RoomDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDetailsCell.swift; sourceTree = "<group>"; };
 		E892A97F21158EA300A57DFC /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		E892A98E2115BEE600A57DFC /* Hotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotel.swift; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 		E892A9882115AFD900A57DFC /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E84954702116204700D031C7 /* ListCollectionViewCell.swift */,
+				E84954702116204700D031C7 /* HotelDetailsCollectionViewCell.swift */,
 				E849549B211729EA00D031C7 /* RoomDetailsCell.swift */,
 			);
 			path = Views;
@@ -333,7 +333,7 @@
 			files = (
 				E892A98F2115BEE600A57DFC /* Hotel.swift in Sources */,
 				E892A9972115C58A00A57DFC /* HotelAnnotation.swift in Sources */,
-				E84954712116204700D031C7 /* ListCollectionViewCell.swift in Sources */,
+				E84954712116204700D031C7 /* HotelDetailsCollectionViewCell.swift in Sources */,
 				E849549C211729EA00D031C7 /* RoomDetailsCell.swift in Sources */,
 				E8360FD7211A1BE40017E400 /* APDataManager.swift in Sources */,
 				E892A98021158EA300A57DFC /* UIViewExtension.swift in Sources */,

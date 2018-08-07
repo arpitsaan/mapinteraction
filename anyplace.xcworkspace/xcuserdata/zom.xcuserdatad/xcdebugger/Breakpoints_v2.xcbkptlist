@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "anyplace/View Controllers/MainViewController.swift"
-            timestampString = "555362741.749975"
+            timestampString = "555363516.804718"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "dataManagerLoadSuccessful(hotels:)"
             landmarkType = "7">
          </BreakpointContent>

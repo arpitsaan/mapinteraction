@@ -14,15 +14,22 @@ protocol APDataManagerDelegate: class {
 
 class APDataManager {
 
-    //delegate
+    //properties
+    private var localJsonName: String
+    public private(set) var hotels: Hotels = []
     weak var delegate: APDataManagerDelegate?
 
     //init
     init(localJsonNamed: String) {
-        if let path = Bundle.main.path(forResource: localJsonNamed, ofType: "json") {
+        self.localJsonName = localJsonNamed
+    }
+    
+    //load data
+    func loadData() {
+        if let path = Bundle.main.path(forResource: localJsonName, ofType: "json") {
             do {
                 let jsonData = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe) as Data
-                let hotels: Hotels = try JSONDecoder().decode(Hotels.self, from: jsonData)
+                hotels = try JSONDecoder().decode(Hotels.self, from: jsonData)
                 
                 delegate?.dataManagerLoadSuccessful(hotels: hotels)
                 

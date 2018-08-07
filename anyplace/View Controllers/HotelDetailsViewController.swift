@@ -54,7 +54,7 @@ extension HotelDetailsViewController: UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCollectionViewCell", for: indexPath) as! ListCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HotelDetailsCollectionViewCell", for: indexPath) as! HotelDetailsCollectionViewCell
         cell.nameLabel.text = "\(indexPath.item)"
         
         guard let hotels = self.hotels else {

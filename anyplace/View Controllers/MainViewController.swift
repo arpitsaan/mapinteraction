@@ -11,50 +11,31 @@ import MapKit
 
 class MainViewController: UIViewController {
 
+    //properties
     fileprivate var hotelDetailsVC: HotelDetailsViewController?
     @IBOutlet weak var mapView: MKMapView!
-    
+
     var hotels: Hotels?
     var annotations = [HotelAnnotation]()
     var selectedAnnotation : HotelAnnotation?
     
+    //view lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         getData()
     }
     
+    //data
     func getData() {
         let dataManager = APDataManager.init(localJsonNamed: "anyplace-hotels")
         dataManager.delegate = self
+        dataManager.loadData()
     }
     
-    func addMapPins() {
-        guard let hotels = self.hotels else {
-            return
-        }
-        
-        var count = 0
-    
-        for hotel in hotels {
-            guard let lat = Double(hotel.latitude), let lon = Double(hotel.longitude) else {
-                continue
-            }
-            
-            let coordinate = CLLocationCoordinate2D.init(latitude: lat, longitude: lon)
-            let hotelAnnotation = HotelAnnotation(title: hotel.name, address: hotel.address, coordinate: coordinate, index: count)
-            count = count+1
-            
-            annotations.append(hotelAnnotation)
-        }
-
-        mapView.addAnnotations(annotations)
-        mapView.showsCompass = false
-        mapView.showsUserLocation = true
-    }
     
     func showListView() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let hotelDetailsVC = storyboard.instantiateViewController(withIdentifier: "ListViewController") as? HotelDetailsViewController {
+        if let hotelDetailsVC = storyboard.instantiateViewController(withIdentifier: "HotelDetailsViewController") as? HotelDetailsViewController {
             self.selectAnnotationAtIndex(index: 0)
 
             self.hotelDetailsVC = hotelDetailsVC
@@ -73,6 +54,7 @@ class MainViewController: UIViewController {
 }
 
 
+//--- Data Manager -----
 extension MainViewController: APDataManagerDelegate {
     
     func dataManagerLoadSuccessful(hotels: Hotels) {
@@ -90,7 +72,31 @@ extension MainViewController: APDataManagerDelegate {
 }
 
 
+//--- Map -----
 extension MainViewController: MKMapViewDelegate {
+    func addMapPins() {
+        guard let hotels = self.hotels else {
+            return
+        }
+        
+        var count = 0
+        
+        for hotel in hotels {
+            guard let lat = Double(hotel.latitude), let lon = Double(hotel.longitude) else {
+                continue
+            }
+            
+            let coordinate = CLLocationCoordinate2D.init(latitude: lat, longitude: lon)
+            let hotelAnnotation = HotelAnnotation(title: hotel.name, address: hotel.address, coordinate: coordinate, index: count)
+            count = count+1
+            
+            annotations.append(hotelAnnotation)
+        }
+        
+        mapView.addAnnotations(annotations)
+        mapView.showsCompass = false
+        mapView.showsUserLocation = true
+    }
     
     func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
         guard let hotelDetailsVC = self.hotelDetailsVC else {
@@ -135,6 +141,7 @@ extension MainViewController: MKMapViewDelegate {
     }
 }
 
+//--- Hotel Details View Delegate -----
 extension MainViewController: HotelDetailsViewDelegate {
     func listViewOnHide() {
         self.hotelDetailsVC?.view.removeFromSuperview()

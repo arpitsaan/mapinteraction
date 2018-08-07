@@ -1,5 +1,5 @@
 //
-//  ListCollectionViewCell.swift
+//  HotelDetailsCollectionViewCell.swift
 //  TestMap
 //
 //  Created by Arpit Agarwal on 8/4/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ListCollectionViewCell: UICollectionViewCell {
+class HotelDetailsCollectionViewCell: UICollectionViewCell {
     
     var hotel: Hotel?
     
