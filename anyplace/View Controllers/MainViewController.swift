@@ -32,12 +32,11 @@ class MainViewController: UIViewController {
         dataManager.loadData()
     }
     
-    
-    func showListView() {
+    //core view setup
+    func showHotelDetailsView() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let hotelDetailsVC = storyboard.instantiateViewController(withIdentifier: "HotelDetailsViewController") as? HotelDetailsViewController {
-            self.selectAnnotationAtIndex(index: 0)
-
+            
             self.hotelDetailsVC = hotelDetailsVC
             hotelDetailsVC.delegate = self
             
@@ -48,19 +47,26 @@ class MainViewController: UIViewController {
         }
     }
     
+    func refreshViews() {
+        addMapPins()
+        showHotelDetailsView()
+        selectAnnotationAtIndex(index: 0)
+    }
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
 }
 
 
-//--- Data Manager -----
+//------------------
+//  Data Manager
+//------------------
 extension MainViewController: APDataManagerDelegate {
     
     func dataManagerLoadSuccessful(hotels: Hotels) {
         self.hotels = hotels
-        addMapPins()
-        showListView()
+        refreshViews()
     }
     
     func dataManagerLoadFailed() {
@@ -72,7 +78,9 @@ extension MainViewController: APDataManagerDelegate {
 }
 
 
-//--- Map -----
+//------------------
+// Map
+//------------------
 extension MainViewController: MKMapViewDelegate {
     func addMapPins() {
         guard let hotels = self.hotels else {
@@ -103,7 +111,9 @@ extension MainViewController: MKMapViewDelegate {
             return
         }
         
-        hotelDetailsVC.hideView(animated: true)
+        if mapView.selectedAnnotations.count == 0 {
+            hotelDetailsVC.hideView(animated: true)
+        }
     }
 
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
@@ -136,18 +146,16 @@ extension MainViewController: MKMapViewDelegate {
     }
     
     func moveMap(coordinate: CLLocationCoordinate2D, mapView: MKMapView) {
+        //zoom to 1 km radius
         let region = MKCoordinateRegionMakeWithDistance(coordinate, 1000, 1000)
         mapView.setRegion(region, animated: true)
     }
 }
 
-//--- Hotel Details View Delegate -----
+//------------------------------
+// Hotel Details View Delegate
+//------------------------------
 extension MainViewController: HotelDetailsViewDelegate {
-    func listViewOnHide() {
-        self.hotelDetailsVC?.view.removeFromSuperview()
-        self.hotelDetailsVC = nil
-    }
-    
     func listViewItemDidScrollTo(indexPath: IndexPath) {
         selectAnnotationAtIndex(index: indexPath.item)
     }

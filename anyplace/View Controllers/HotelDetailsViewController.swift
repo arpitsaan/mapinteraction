@@ -17,6 +17,7 @@ class HotelDetailsViewController: UIViewController {
 
     weak var delegate: HotelDetailsViewDelegate?
     @IBOutlet weak var collectionView: UICollectionView!
+    let visibleHeight: CGFloat = 150.0
     
     //view load
     override func viewDidLoad() {
@@ -98,6 +99,11 @@ extension HotelDetailsViewController: UICollectionViewDelegate, UICollectionView
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height)
+    }
+    
+    //delegate on scrolling end
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         guard let collectionView = self.collectionView else {
             return
@@ -108,31 +114,52 @@ extension HotelDetailsViewController: UICollectionViewDelegate, UICollectionView
         }
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height)
-    }
 }
 
-//-------- Interaction ---------------
+//-------- Interactions ---------------
 extension HotelDetailsViewController {
+    
     func setupInitState() {
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(panUsed))
         self.view.addGestureRecognizer(panGestureRecognizer)
-        self.view.frame.origin.y = self.view.frame.size.height - 150
+        self.view.frame.origin.y = self.view.frame.size.height - visibleHeight
     }
     
     func showHotelAtIndex(index: Int) {
+
+        if self.view.isHidden == true {
+            showView(animated: true)
+        }
         
         collectionView.scrollToItem(at: IndexPath.init(item: index, section: 0), at: .left, animated: false)
+    }
+    
+    func showView(animated: Bool) {
+        var showFrame = self.view.frame
+        showFrame.origin.y = showFrame.height - visibleHeight
+        
+        var hideFrame = showFrame
+        hideFrame.origin.y = hideFrame.height
+        self.view.frame = hideFrame
+        
+        self.view.isHidden = false
+        
+        UIView.animate(withDuration: animated ? 0.2 : 0, animations: {
+            self.view.frame = showFrame
+        }, completion: { (finished: Bool) in
+        })
     }
     
     
     func hideView(animated: Bool) {
         var hiddenFrame = self.view.frame
         hiddenFrame.origin.y = hiddenFrame.height
-        UIView.animate(withDuration: animated ? 0.5 : 0) {
+        
+        UIView.animate(withDuration: animated ? 0.2 : 0, animations: {
             self.view.frame = hiddenFrame
-        }
+        }, completion: { (finished: Bool) in
+            self.view.isHidden = true
+        })
     }
     
     @objc func panUsed(sender: UIPanGestureRecognizer) {
