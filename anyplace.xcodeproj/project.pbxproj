@@ -12,7 +12,6 @@
 		E84954712116204700D031C7 /* ListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84954702116204700D031C7 /* ListCollectionViewCell.swift */; };
 		E849549C211729EA00D031C7 /* RoomDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E849549B211729EA00D031C7 /* RoomDetailsCell.swift */; };
 		E892A98021158EA300A57DFC /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E892A97F21158EA300A57DFC /* UIViewExtension.swift */; };
-		E892A9822115950600A57DFC /* APColors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E892A9812115950600A57DFC /* APColors.xcassets */; };
 		E892A98F2115BEE600A57DFC /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E892A98E2115BEE600A57DFC /* Hotel.swift */; };
 		E892A9922115BF7300A57DFC /* anyplace-hotels.json in Resources */ = {isa = PBXBuildFile; fileRef = E892A9912115BF7300A57DFC /* anyplace-hotels.json */; };
 		E892A9952115C44200A57DFC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E892A9942115C44200A57DFC /* MapKit.framework */; };
@@ -43,7 +42,6 @@
 		E84954702116204700D031C7 /* ListCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCollectionViewCell.swift; sourceTree = "<group>"; };
 		E849549B211729EA00D031C7 /* RoomDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDetailsCell.swift; sourceTree = "<group>"; };
 		E892A97F21158EA300A57DFC /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
-		E892A9812115950600A57DFC /* APColors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = APColors.xcassets; sourceTree = "<group>"; };
 		E892A98E2115BEE600A57DFC /* Hotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotel.swift; sourceTree = "<group>"; };
 		E892A9912115BF7300A57DFC /* anyplace-hotels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "anyplace-hotels.json"; sourceTree = "<group>"; };
 		E892A9942115C44200A57DFC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -164,7 +162,6 @@
 				E8BD90BC211979D30019BE8C /* MainViewController.swift */,
 				E8A72D732112F9AB0040F867 /* Main.storyboard */,
 				E8A72D762112F9AD0040F867 /* Assets.xcassets */,
-				E892A9812115950600A57DFC /* APColors.xcassets */,
 				E8A72D782112F9AD0040F867 /* LaunchScreen.storyboard */,
 				E8A72D7B2112F9AD0040F867 /* Info.plist */,
 			);
@@ -263,7 +260,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E892A9822115950600A57DFC /* APColors.xcassets in Resources */,
 				E8A72D7A2112F9AD0040F867 /* LaunchScreen.storyboard in Resources */,
 				E8A72D772112F9AD0040F867 /* Assets.xcassets in Resources */,
 				E8A72D752112F9AB0040F867 /* Main.storyboard in Resources */,
