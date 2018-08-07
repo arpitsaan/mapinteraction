@@ -25,8 +25,10 @@ class ListViewController: UIViewController {
         self.collectionView.reloadData()
     }
     
-    @IBAction func hide(_ sender: Any) {
-        delegate?.listViewOnHide()
+    @IBAction func didTapApply(_ sender: Any) {
+        let alert = UIAlertController.init(title: "Apply", message: "TODO: Add the apply to hotel form to this app", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction.init(title: "Okay", style: .default, handler: nil))
+        self.show(alert, sender: nil)
     }
     
     func refreshWithHotels(hotels : Hotels?) {
@@ -108,14 +110,19 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
         collectionView.scrollToItem(at: IndexPath.init(item: index, section: 0), at: .left, animated: false)
     }
     
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        guard let collectionView = self.collectionView else {
+            return
+        }
         
-        delegate?.listViewItemDidScrollTo(indexPath: indexPath)
+        if let indexPath = collectionView.indexPathsForVisibleItems.first {
+            delegate?.listViewItemDidScrollTo(indexPath: indexPath)
+        }
     }
-    
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height)
     }
+    
     
 }

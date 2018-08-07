@@ -18,11 +18,11 @@
 		E892A9952115C44200A57DFC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E892A9942115C44200A57DFC /* MapKit.framework */; };
 		E892A9972115C58A00A57DFC /* HotelAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E892A9962115C58A00A57DFC /* HotelAnnotation.swift */; };
 		E8A72D702112F9AB0040F867 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A72D6F2112F9AB0040F867 /* AppDelegate.swift */; };
-		E8A72D722112F9AB0040F867 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A72D712112F9AB0040F867 /* ViewController.swift */; };
 		E8A72D752112F9AB0040F867 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8A72D732112F9AB0040F867 /* Main.storyboard */; };
 		E8A72D772112F9AD0040F867 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8A72D762112F9AD0040F867 /* Assets.xcassets */; };
 		E8A72D7A2112F9AD0040F867 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8A72D782112F9AD0040F867 /* LaunchScreen.storyboard */; };
 		E8A72D852112F9AD0040F867 /* anyplaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A72D842112F9AD0040F867 /* anyplaceTests.swift */; };
+		E8BD90BD211979D30019BE8C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BD90BC211979D30019BE8C /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +50,6 @@
 		E892A9962115C58A00A57DFC /* HotelAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelAnnotation.swift; sourceTree = "<group>"; };
 		E8A72D6C2112F9AB0040F867 /* anyplace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = anyplace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8A72D6F2112F9AB0040F867 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E8A72D712112F9AB0040F867 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E8A72D742112F9AB0040F867 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E8A72D762112F9AD0040F867 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E8A72D792112F9AD0040F867 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,6 +57,7 @@
 		E8A72D802112F9AD0040F867 /* anyplaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = anyplaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8A72D842112F9AD0040F867 /* anyplaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = anyplaceTests.swift; sourceTree = "<group>"; };
 		E8A72D862112F9AD0040F867 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8BD90BC211979D30019BE8C /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,7 +161,7 @@
 				E892A97E2115895C00A57DFC /* Extensions */,
 				E8A72D6F2112F9AB0040F867 /* AppDelegate.swift */,
 				E849546E2116203D00D031C7 /* ListViewController.swift */,
-				E8A72D712112F9AB0040F867 /* ViewController.swift */,
+				E8BD90BC211979D30019BE8C /* MainViewController.swift */,
 				E8A72D732112F9AB0040F867 /* Main.storyboard */,
 				E8A72D762112F9AD0040F867 /* Assets.xcassets */,
 				E892A9812115950600A57DFC /* APColors.xcassets */,
@@ -329,7 +329,7 @@
 				E84954712116204700D031C7 /* ListCollectionViewCell.swift in Sources */,
 				E849549C211729EA00D031C7 /* RoomDetailsCell.swift in Sources */,
 				E892A98021158EA300A57DFC /* UIViewExtension.swift in Sources */,
-				E8A72D722112F9AB0040F867 /* ViewController.swift in Sources */,
+				E8BD90BD211979D30019BE8C /* MainViewController.swift in Sources */,
 				E8A72D702112F9AB0040F867 /* AppDelegate.swift in Sources */,
 				E849546F2116203D00D031C7 /* ListViewController.swift in Sources */,
 			);
