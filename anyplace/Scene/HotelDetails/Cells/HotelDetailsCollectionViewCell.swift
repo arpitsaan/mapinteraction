@@ -1,6 +1,6 @@
 //
 //  HotelDetailsCollectionViewCell.swift
-//  TestMap
+//  anyplace
 //
 //  Created by Arpit Agarwal on 8/4/18.
 //  Copyright © 2018 acyooman. All rights reserved.

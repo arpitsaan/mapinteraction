@@ -121,14 +121,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		E8360FD8211A21FC0017E400 /* Scenes */ = {
+		E8360FD8211A21FC0017E400 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
 				E81A1C53211AAD9D000059AB /* Main */,
 				E81A1C54211AADA6000059AB /* HotelDetails */,
 				E8A72D732112F9AB0040F867 /* Main.storyboard */,
 			);
-			path = Scenes;
+			path = Scene;
 			sourceTree = "<group>";
 		};
 		E892A97E2115895C00A57DFC /* Extensions */ = {
@@ -189,7 +189,7 @@
 		E8A72D6E2112F9AB0040F867 /* anyplace */ = {
 			isa = PBXGroup;
 			children = (
-				E8360FD8211A21FC0017E400 /* Scenes */,
+				E8360FD8211A21FC0017E400 /* Scene */,
 				E892A9902115BF6700A57DFC /* Data */,
 				E892A98D2115BEC800A57DFC /* Models */,
 				E892A97E2115895C00A57DFC /* Extensions */,
