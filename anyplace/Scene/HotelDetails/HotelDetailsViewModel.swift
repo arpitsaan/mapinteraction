@@ -19,6 +19,8 @@ class HotelDetailsViewModel: NSObject {
     var listViewVelocity: CGPoint?
     var listViewFrame: CGRect?
     
+    lazy var itemSize: CGSize = self.getItemSize()
+
     func setDefaultFrame(_ handler: @escaping (_: CGRect) -> ()) {
         guard var frame = self.listViewFrame else {
             return
@@ -78,5 +80,18 @@ class HotelDetailsViewModel: NSObject {
                 }, completion: nil)
             }
         }
+    }
+    
+    func getItemSize() -> CGSize {
+        if #available(iOS 11.0, *) {
+            //adjust for safe area
+            let window = UIApplication.shared.keyWindow
+            if let topPadding = window?.safeAreaInsets.top,
+                let bottomPadding = window?.safeAreaInsets.bottom {
+                return CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height - topPadding - bottomPadding)
+            }
+        }
+        
+        return CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
     }
 }

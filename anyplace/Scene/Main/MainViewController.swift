@@ -52,10 +52,6 @@ class MainViewController: UIViewController {
         showHotelDetailsView()
         selectAnnotationAtIndex(index: 0)
     }
-    
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
 }
 
 

@@ -44,7 +44,7 @@ class HotelDetailsViewController: UIViewController {
 //--------------------------
 // Collection View Methods
 //--------------------------
-extension HotelDetailsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension HotelDetailsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -72,7 +72,7 @@ extension HotelDetailsViewController: UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height)
+        return hotelDetailsViewModel.getItemSize()
     }
     
     //delegate event when scrolling ends
