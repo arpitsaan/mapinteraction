@@ -18,18 +18,18 @@ class HotelDetailsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var amenitiesLabel: UILabel!
     @IBOutlet weak var rateLabel: UILabel!
     
-    var hotelDetailsModel: HotelDetailsItem? {
+    var hotelDetailsItemModel: HotelDetailsItem? {
         didSet {
-            guard let hotelDetailsModel = self.hotelDetailsModel else {
+            guard let hotelDetailsItemModel = self.hotelDetailsItemModel else {
                 return
             }
             
-            self.nameLabel.text = hotelDetailsModel.name
-            self.imageView.kf.setImage(with: hotelDetailsModel.imageURL)
-            self.rateLabel.text = hotelDetailsModel.priceString
-            self.addressLabel.text = hotelDetailsModel.address
-            self.amenitiesLabel.text = hotelDetailsModel.amenitiesString
-            self.roomsLabel.text = hotelDetailsModel.roomsString
+            self.nameLabel.text = hotelDetailsItemModel.name
+            self.imageView.kf.setImage(with: hotelDetailsItemModel.imageURL)
+            self.rateLabel.text = hotelDetailsItemModel.priceString
+            self.addressLabel.text = hotelDetailsItemModel.address
+            self.amenitiesLabel.text = hotelDetailsItemModel.amenitiesString
+            self.roomsLabel.text = hotelDetailsItemModel.roomsString
         }
     }
 }

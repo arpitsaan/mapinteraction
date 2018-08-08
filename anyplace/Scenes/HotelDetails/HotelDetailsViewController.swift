@@ -1,6 +1,6 @@
 //
-//  ListViewController.swift
-//  TestMap
+//  HotelDetailsViewController.swift
+//  anyplace
 //
 //  Created by Arpit Agarwal on 8/4/18.
 //  Copyright © 2018 acyooman. All rights reserved.
@@ -16,7 +16,9 @@ class HotelDetailsViewController: UIViewController {
 
     weak var delegate: HotelDetailsViewDelegate?
     @IBOutlet weak var collectionView: UICollectionView!
-    let visibleHeight: CGFloat = 150.0
+    
+    //view model
+    private var hotelDetailsViewModel = HotelDetailsViewModel()
     
     //view load
     override func viewDidLoad() {
@@ -36,7 +38,6 @@ class HotelDetailsViewController: UIViewController {
         let alert = UIAlertController.init(title: "Apply", message: "TODO: Add  apply form functionality on this button tap", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction.init(title: "Okay", style: .default, handler: nil))
         self.show(alert, sender: nil)
-        //FIXME: Add apply functionality
     }
 }
 
@@ -62,10 +63,10 @@ extension HotelDetailsViewController: UICollectionViewDelegate, UICollectionView
             return cell
         }
         
-        //----- Populate Hotel Cells ------
+        //----- Populate Hotel Detail Cells ------
         let hotel = hotels[indexPath.item]
-        let hotelDetailsModel = HotelDetailsItem(with: hotel)
-        cell.hotelDetailsModel = hotelDetailsModel
+        let hotelDetailsItemModel = HotelDetailsItem(with: hotel)
+        cell.hotelDetailsItemModel = hotelDetailsItemModel
 
         return cell
     }
@@ -74,7 +75,7 @@ extension HotelDetailsViewController: UICollectionViewDelegate, UICollectionView
         return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height)
     }
     
-    //delegate on scrolling end
+    //delegate event when scrolling ends
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         guard let collectionView = self.collectionView else {
             return
@@ -94,11 +95,14 @@ extension HotelDetailsViewController {
     func setupInitState() {
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(panUsed))
         self.view.addGestureRecognizer(panGestureRecognizer)
-        self.view.frame.origin.y = self.view.frame.size.height - visibleHeight
+        
+        self.hotelDetailsViewModel.listViewFrame = self.view.frame
+        self.hotelDetailsViewModel.setDefaultFrame { (frame) in
+            self.view.frame = frame
+        }
     }
     
     func showHotelAtIndex(index: Int, animated: Bool) {
-
         if self.view.isHidden == true {
             showView(animated: animated)
         }
@@ -108,7 +112,7 @@ extension HotelDetailsViewController {
     
     func showView(animated: Bool) {
         var showFrame = self.view.frame
-        showFrame.origin.y = showFrame.height - visibleHeight
+        showFrame.origin.y = self.hotelDetailsViewModel.listViewY
         
         var hideFrame = showFrame
         hideFrame.origin.y = hideFrame.height
@@ -138,57 +142,17 @@ extension HotelDetailsViewController {
             self.view.alpha = 1
         })
     }
-    
+
     //Pan Gesture Interaction
     @objc func panUsed(sender: UIPanGestureRecognizer) {
-        let translation = sender.translation(in: self.view)
-        let velocity = sender.velocity(in: self.view)
-        let listViewY = self.view.frame.origin.y;
-        var lvFrame = self.view.frame;
         
-        if sender.state == .ended {
-            let velocityThresh: CGFloat = 700
-            let showHeight: CGFloat = lvFrame.size.height - 150
-            let heightThresh: CGFloat = lvFrame.size.height/2
-            
-            if (velocity.y < -velocityThresh) {
-                //swiped top
-                lvFrame.origin.y = 0;
-            }else if (velocity.y > velocityThresh) {
-                //swiped down
-                lvFrame.origin.y = lvFrame.size.height - 150;
-            }else {
-                if(listViewY < heightThresh) {
-                    //top snap
-                    lvFrame.origin.y = 0;
-                }
-                else if(listViewY >= heightThresh) {
-                    //bottom snap
-                    lvFrame.origin.y = showHeight;
-                }
-            }
-            
-            //animate view to top/bottom edge when pan gesture ends
-            UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.72, initialSpringVelocity: 0.1, options: [.allowUserInteraction, .curveEaseInOut], animations: {
-                self.view.frame = lvFrame
-            }, completion: nil)
-        }
-            
-        else {
-            if (listViewY + translation.y > 0) {
-                
-                self.view.center = CGPoint(x: self.view.center.x, y: self.view.center.y + translation.y)
-                
-                sender.setTranslation(CGPoint.zero, in: self.view)
-            }
-            else {
-                lvFrame.origin = .zero
-                
-                //snap to top
-                UIView.animate(withDuration: 0.1, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.1, options: .curveEaseInOut, animations: {
-                    self.view.frame = lvFrame
-                }, completion: nil)
-            }
+        self.hotelDetailsViewModel.listViewTranslation = sender.translation(in: self.view)
+        self.hotelDetailsViewModel.listViewVelocity = sender.velocity(in: self.view)
+        self.hotelDetailsViewModel.listViewY = self.view.frame.origin.y;
+        self.hotelDetailsViewModel.listViewFrame = self.view.frame;
+        
+        self.hotelDetailsViewModel.updateViewFrame(sender: sender) { (frame) in
+            self.view.frame = frame
         }
     }
 }

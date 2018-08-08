@@ -17,7 +17,6 @@ class HotelDetailsItem: NSObject {
     var amenitiesString: String?
     var roomsString: String?
     
-    
     init(with hotel: Hotel) {
         super.init()
         
