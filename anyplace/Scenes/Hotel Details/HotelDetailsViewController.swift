@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Kingfisher //for Image Download + Cache
 
 protocol HotelDetailsViewDelegate: class {
     func listViewItemDidScrollTo(indexPath: IndexPath)
@@ -64,39 +63,10 @@ extension HotelDetailsViewController: UICollectionViewDelegate, UICollectionView
         }
         
         //----- Populate Hotel Cells ------
-        
-        //Name
         let hotel = hotels[indexPath.item]
-        cell.nameLabel.text = hotel.name
-        
-        //Address
-        cell.addressLabel.text = hotel.address
-        
-        //Image
-        let url = URL(string: hotel.coverPhoto.url)
-        cell.imageView.kf.setImage(with: url)
-        
-        //Rate
-        if let rateText = hotel.rateText {
-            cell.rateLabel.text = rateText + " ~ / month";
-        }
-        
-        //Amenities (v1)
-        var amenities = "Private Bath : " + hotel.amenities.privateBath.description
-        amenities += ", Shared Kitchen : " + hotel.amenities.sharedKitchen.description
-        cell.amenitiesLabel.text = amenities
-        
-        //Rooms (v1)
-        var roomsString = ""
-        for room in hotel.rooms {
-            //Create a single string for all rates (for prototype v1)
-            if let rate = room.rateText {
-                let currentRoomString = room.name + "\n" + rate + "\n\n"
-                roomsString.append(currentRoomString)
-            }
-        }
-        cell.roomsLabel.text = roomsString
-        
+        let hotelDetailsModel = HotelDetailsItem(with: hotel)
+        cell.hotelDetailsModel = hotelDetailsModel
+
         return cell
     }
     
