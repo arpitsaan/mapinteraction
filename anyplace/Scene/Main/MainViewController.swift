@@ -52,7 +52,7 @@ class MainViewController: UIViewController {
 }
 
 //------------------
-// Map
+// Map Interaction
 //------------------
 extension MainViewController: MKMapViewDelegate {
     @objc func didTapMapView(sender: UITapGestureRecognizer) {
